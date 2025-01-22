@@ -1,22 +1,11 @@
-# Eliza
+# Eliza Starknet Starter Template
 
-## Edit the character files
+###
 
-Open `src/character.ts` to modify the default character. Uncomment and edit.
-
-### Custom characters
-
-To load custom characters instead:
-- Use `pnpm start --characters="path/to/your/character.json"`
-- Multiple character files can be loaded simultaneously
-
-### Add clients
-```
-# in character.ts
-clients: [Clients.TWITTER, Clients.DISCORD],
-
-# in character.json
-clients: ["twitter", "discord"]
+## Clone the repository
+```bash
+git clone https://github.com/Akashneelesh/eliza-starknet-starter-template.git
+cd eliza-starknet-starter-template.git
 ```
 
 ## Duplicate the .env.example template
@@ -29,62 +18,48 @@ cp .env.example .env
 
 ### Add login credentials and keys to .env
 ```
-DISCORD_APPLICATION_ID="discord-application-id"
-DISCORD_API_TOKEN="discord-api-token"
+STARKNET_ADDRESS=0x00
+STARKNET_PRIVATE_KEY=0x00
+STARKNET_RPC_URL=https://starknet-mainnet.public.blastapi.io/rpc/v0_7
 ...
-OPENROUTER_API_KEY="sk-xx-xx-xxx"
-...
-TWITTER_USERNAME="username"
-TWITTER_PASSWORD="password"
-TWITTER_EMAIL="your@email.com"
+ANTHROPIC_API_KEY="sk-xx-xx-xxx"
+
 ```
 
-## Install dependencies and start your agent
+### Installing dependencies on the plugin-starknet and building
+```bash
+cd plugin-starknet
+pnpm i && pnpm build
+```
+
+### Installing dependencies on the root
+```bash
+cd plugin-starknet
+pnpm i 
+pnpm add zod node-cache typescript
+```
+
+### Building the project
+```bash
+pnpm build && pnpm start
+```
+
+### A client to interact with our character
+Hence we will be cloning the main eliza repository
+```bash
+git clone https://github.com/elizaOS/eliza.git
+```
+
+## Install dependencies
 
 ```bash
-pnpm i && pnpm start
-```
-Note: this requires node to be at least version 22 when you install packages and run the agent.
-
-## Run with Docker
-
-### Build and run Docker Compose (For x86_64 architecture)
-
-#### Edit the docker-compose.yaml file with your environment variables
-
-```yaml
-services:
-    eliza:
-        environment:
-            - OPENROUTER_API_KEY=blahdeeblahblahblah
+pnpm i 
 ```
 
-#### Run the image
-
+### Starting the client 
 ```bash
-docker compose up
+pnpm start:client
 ```
 
-### Build the image with Mac M-Series or aarch64
-
-Make sure docker is running.
-
-```bash
-# The --load flag ensures the built image is available locally
-docker buildx build --platform linux/amd64 -t eliza-starter:v1 --load .
-```
-
-#### Edit the docker-compose-image.yaml file with your environment variables
-
-```yaml
-services:
-    eliza:
-        environment:
-            - OPENROUTER_API_KEY=blahdeeblahblahblah
-```
-
-#### Run the image
-
-```bash
-docker compose -f docker-compose-image.yaml up
-```
+Ones everything is done right you should see a localhost:5174 url, open that up in your browser.
+And you should be to see an interface something like this
