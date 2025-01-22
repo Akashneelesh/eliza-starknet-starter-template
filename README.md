@@ -62,4 +62,16 @@ pnpm start:client
 ```
 
 Ones everything is done right you should see a localhost:5174 url, open that up in your browser.
-And you should be to see an interface something like this
+And you should be to see an interface something like this and click on chat
+
+<img width="1141" alt="Screenshot 2025-01-22 at 17 49 56" src="https://github.com/user-attachments/assets/d94a1a02-7e46-41ac-ba21-746f3565b6bf" />
+
+### Transfer Action 
+
+Now let's do a transfer action - to do that you will have to mention the type of token, the amount and finally the recievers address 
+
+<img width="914" alt="Screenshot 2025-01-22 at 02 06 54" src="https://github.com/user-attachments/assets/1cc31570-9d83-435c-aa96-587dd86165c1" />
+
+Thats pretty much it !!
+
+You can go ahead with integrating this with various other usecases and also build your own actions under the plugin-starknet directory and get it integrated onto your protocol.
