@@ -34,7 +34,7 @@ pnpm i && pnpm build
 
 ### Installing dependencies on the root
 ```bash
-cd plugin-starknet
+cd ..
 pnpm i 
 pnpm add zod node-cache typescript
 ```
