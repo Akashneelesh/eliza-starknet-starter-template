@@ -5,7 +5,7 @@
 ## Clone the repository
 ```bash
 git clone https://github.com/Akashneelesh/eliza-starknet-starter-template.git
-cd eliza-starknet-starter-template.git
+cd eliza-starknet-starter-template
 ```
 
 ## Duplicate the .env.example template
